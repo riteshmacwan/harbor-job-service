@@ -5,3 +5,4 @@ export { SettingRepository } from "./setting";
 export { SkillRepository } from "./skill";
 export { PlanRepository } from "./plan";
 export { UserRepository } from "./user";
+export { JobRepository } from "./job";

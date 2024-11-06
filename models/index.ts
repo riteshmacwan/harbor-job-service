@@ -6,4 +6,4 @@ export { Setting } from "./setting";
 export { Skill } from "./skill";
 export { Plan } from "./plan";
 export { User } from "./user";
-// MSSQL Models
+export { Job } from "./job";
