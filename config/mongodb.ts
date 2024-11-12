@@ -17,7 +17,7 @@ const commonUtils = CommonUtils.getInstance();
 const generateMongoDbUrl = async (): Promise<string> => {
   let MONGODB_URL = "";
   if (environment === "local") {
-    MONGODB_URL = process.env.DB_URL || "";
+ MONGODB_URL = process.env.DB_URL ?? "mongodb://127.0.0.1:27017/harbor_dev";
   } else {
     const DB_USERNAME = await commonUtils.getSecret(
       `${process.env.NODE_ENV}-DB-USERNAME`
