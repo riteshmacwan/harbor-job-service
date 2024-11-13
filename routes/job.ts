@@ -1,5 +1,7 @@
 import express, { Router } from "express";
 import { JobController } from "../controllers";
+import { jobDataValidation } from "../middlewares/validations/job";
+import { validation } from "../middlewares/validations/communication";
 
 const jobController = new JobController();
 const router = express.Router();
@@ -36,7 +38,7 @@ export default (router: Router) => {
    *               items:
    *                 $ref: '#/components/schemas/Department'
    */
-  router.post("/job", jobController.createJob);
+  router.post("/job", jobDataValidation, validation, jobController.createJob);
 
   /**
    * @swagger
