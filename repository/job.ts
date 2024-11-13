@@ -55,7 +55,7 @@ export class JobRepository {
    */
   async deleteJob(data: JobDelete): Promise<JobCreationResult> {
     try {
-      const deletedJob = await Job.findByIdAndDelete(data._id);
+      const deletedJob = await Job.findByIdAndDelete(data.id);
 
       if (deletedJob) {
         return "Job deleted successfully";

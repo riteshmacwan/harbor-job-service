@@ -70,11 +70,11 @@ export class JobController {
    * @returns {Promise<Response>} The response indicating success or failure.
    */
   deleteJob = async (
-    req: Request<{}, {}, JobDelete>,
+    req: Request<JobDelete, {}, JobDelete>,
     res: Response
   ): Promise<Response> => {
     // Create job using the provided data
-    const data = await this.jobService.deleteJob(req.query);
+    const data = await this.jobService.deleteJob(req.params);
     // Send success response
     return res.status(200).json({
       status: true,
